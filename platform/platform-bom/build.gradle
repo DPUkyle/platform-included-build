@@ -1,0 +1,27 @@
+plugins {
+	id 'java-platform'
+	id 'maven-publish'
+}
+
+dependencies {
+	constraints {
+		api project(':platform-api')
+		runtime project(':platform-impl')
+	}
+}
+
+tasks.withType(GenerateModuleMetadata) {
+    enabled = false
+}
+
+publishing {
+    publications {
+        myPlatform(MavenPublication) {
+            from components.javaPlatform
+    	}
+	}
+	
+    repositories {
+    	mavenLocal()
+    }
+}
