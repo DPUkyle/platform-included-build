@@ -1,0 +1,13 @@
+plugins {
+    id 'war'
+}
+
+repositories {
+	mavenLocal()
+}
+
+dependencies {
+	implementation platform('com.acme.platform:platform-bom:1.0.0')
+	implementation 'com.acme.platform:platform-api'
+	runtimeOnly 'com.acme.platform:platform-impl'
+}

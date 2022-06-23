@@ -1,0 +1,4 @@
+include 'app-war'
+
+// Uncomment next line to enable composite build for local development
+//includeBuild '../platform'
